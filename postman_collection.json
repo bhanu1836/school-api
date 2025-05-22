@@ -1,0 +1,45 @@
+{
+  "info": {
+    "name": "School Management API",
+    "_postman_id": "12345-67890",
+    "description": "APIs for adding and listing schools",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add School",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Greenfield High\",\n  \"address\": \"123 Main St\",\n  \"latitude\": 12.9716,\n  \"longitude\": 77.5946\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/addSchool",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "addSchool"]
+        }
+      }
+    },
+    {
+      "name": "List Schools",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/listSchools?latitude=12.9716&longitude=77.5946",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "listSchools"],
+          "query": [
+            { "key": "latitude", "value": "12.9716" },
+            { "key": "longitude", "value": "77.5946" }
+          ]
+        }
+      }
+    }
+  ]
+}
